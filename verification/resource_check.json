@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "finite_example": {
+    "initial_visibility": "3/5",
+    "requested_infidelity": "1/100",
+    "failure_allowance": "1/20",
+    "levels": 5,
+    "achieved_infidelity": 0.007993466894734238,
+    "exact_mean_as_decimal": 54005.195036734985,
+    "cap_per_run": 108011,
+    "runs": 5,
+    "hard_native_pair_budget": 540055,
+    "pair_half_qubits_per_lab": 11
+  },
+  "iid_cost_distribution_check": {
+    "level": 2,
+    "coefficient_cutoff": 4000,
+    "total_mass": 0.9999999999999976,
+    "mean_from_distribution": 143.554687499999,
+    "variance_from_distribution": 16332.069396972454,
+    "cap": 288,
+    "abort_probability_approx": 0.11739739700623142
+  },
+  "seeded_register_accounting": {
+    "level": 3,
+    "runs": 300,
+    "seed": 20261117,
+    "maximum_observed_live_pairs": 7,
+    "proved_live_pair_bound": 7,
+    "sample_mean_cost": 1290.32,
+    "analytic_mean_cost": 1208.0965909090917
+  },
+  "asymptotic_numeric_check": {
+    "scaled_error_limit_approx": 2.674722536136654,
+    "scaled_mean_limit_approx": 7.1728504767685815,
+    "achieved_exponent": 1.6309297535714573
+  },
+  "limits": "Finite checks corroborate formulas, not universal proof, priority, or cost optimality."
+}

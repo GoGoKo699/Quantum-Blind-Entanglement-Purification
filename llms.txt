@@ -1,0 +1,18 @@
+# Quantum Blind Entanglement Purification
+
+The project supplies a fixed three-copy LOCC chiral Schur filter that improves an unknown two-qubit maximally entangled target under isotropic noise, preserving the same target. It includes exact formulas, a quality-floor extension, finite-budget recursion, an elementary local circuit and composable implementation-error bounds.
+
+Read in order: science/model.md, science/protocol.md, science/algebra.md, science/chirality.md, science/resources.md, science/implementation.md, science/robustness.md, science/interpretation.md. science/README.md is the connected entrypoint.
+
+- Exact state/input/output/success conventions and inherited minimum specimen threshold: science/model.md.
+- Physical local maps, complete instrument and unknown-target covariance: science/protocol.md.
+- Equal/unequal-visibility contractions, gain and floor under classical product mixtures: science/algebra.md.
+- Optimization within paired rank-one multiplicity filters, including zero gain for real filters: science/chirality.md.
+- All failed attempts, deterministic native-pair cap, confidence, achieved exponent, streaming storage, messages and elapsed-time upper bound: science/resources.md.
+- Fixed local matrix, chronological gate compiler, unoptimized CNOT/one-qubit counts and precision convention: science/implementation.md.
+- Complete flagged-channel errors, postselection conditioning, arbitrary nonisotropic implementation errors and final-noise limitation: science/robustness.md.
+- Scientific consequence, why the physical target is preserved, and distinction from a known Bell channel: science/interpretation.md.
+- Prior work and inherited proof/architecture: references/RELATED_WORK.md; structured citations: references/references.bib.
+- Commands, expected checks and their limits: verification/README.md.
+
+Keep these distinctions explicit: squared-overlap fidelity versus half trace distance; per-attempt conditional output versus full finite-budget success; common quality floor versus best-input guarantee; pointwise product-mixture promise versus marginal floors; same unknown target versus known standard Bell output; specimen threshold versus memory lower bound; paired-filter optimization versus all-LOCC optimality; arbitrary one-qubit gate count versus Clifford+T cost. The two-copy impossibility and Schur architecture are inherited and credited. No target drift or general quantum-correlated noise theorem is asserted.
