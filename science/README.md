@@ -13,4 +13,4 @@ The problem is to improve a noisy specimen of an unknown entangled target while 
 | 7 | What survives imperfect controls and finite precision? | [Complete-instrument error bounds](robustness.md) |
 | 8 | What physical capability and limitations remain? | [Interpretation](interpretation.md) |
 
-For attribution and model-level differences, read [related work](../references/RELATED_WORK.md). For reproduction, read [verification](../verification/README.md). The scientific account owns the exact assumptions and proofs; numerical residuals alone do not replace them.
+For attribution and model-level differences, read [related work](../references/RELATED_WORK.md). For reproduction, read [verification](../verification/README.md). The [learning route](../learning/README.md) and [30-milestone map](../learning/MILESTONES.md) connect the prerequisites to this account. The scientific account owns the exact assumptions and proofs; numerical residuals alone do not replace them.

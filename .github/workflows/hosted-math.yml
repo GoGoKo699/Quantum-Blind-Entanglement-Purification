@@ -1,0 +1,90 @@
+name: Hosted mathematics
+
+on:
+  pull_request:
+    paths:
+      - '**.md'
+      - 'verification/**'
+      - '.github/workflows/hosted-math.yml'
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: hosted-math-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  capture:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      CAPTURE_REVISION: ${{ github.event.pull_request.head.sha }}
+    steps:
+      - name: Check out the exact proposed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ env.CAPTURE_REVISION }}
+          persist-credentials: false
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.12'
+      - name: Install the verification runtimes
+        id: runtime
+        run: |
+          mkdir -p "$RUNNER_TEMP/verification"
+          node --version | tee "$RUNNER_TEMP/verification/runtime.log"
+          python --version | tee -a "$RUNNER_TEMP/verification/runtime.log"
+          git --version | tee -a "$RUNNER_TEMP/verification/runtime.log"
+          python -m pip install --disable-pip-version-check -r verification/requirements.txt 2>&1 | tee "$RUNNER_TEMP/verification/python-install.log"
+          npm install --prefix "$RUNNER_TEMP/math-runtime" --ignore-scripts --no-audit --no-fund playwright@1.56.1 mathjax-full@3.2.1 2>&1 | tee "$RUNNER_TEMP/verification/node-install.log"
+          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium 2>&1 | tee "$RUNNER_TEMP/verification/browser-install.log"
+      - name: Verify the scientific account
+        if: ${{ !cancelled() && steps.runtime.outcome == 'success' }}
+        run: python verification/run_all.py 2>&1 | tee "$RUNNER_TEMP/verification/science.log"
+      - name: Verify the learning route and navigation
+        if: ${{ !cancelled() && steps.runtime.outcome == 'success' }}
+        run: python verification/check_learning.py 2>&1 | tee "$RUNNER_TEMP/verification/learning.log"
+      - name: Probe representative inline, display and table mathematics
+        if: ${{ !cancelled() && steps.runtime.outcome == 'success' }}
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node verification/hosted/probe_hosted_math.cjs \
+            --root "$GITHUB_WORKSPACE" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$CAPTURE_REVISION" \
+            --page science/algebra.md \
+            --output "$RUNNER_TEMP/hosted-probe"
+      - name: Compare every hosted mathematical expression
+        if: ${{ !cancelled() && steps.runtime.outcome == 'success' }}
+        run: |
+          export NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules"
+          node verification/hosted/capture_hosted_math.cjs \
+            --root "$GITHUB_WORKSPACE" \
+            --repository "$GITHUB_REPOSITORY" \
+            --revision "$CAPTURE_REVISION" \
+            --contract verification/hosted/math-contract.json \
+            --output "$RUNNER_TEMP/hosted-math"
+      - name: Retain actual captures, comparisons and verification logs
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: hosted-math-${{ env.CAPTURE_REVISION }}
+          path: |
+            ${{ runner.temp }}/verification
+            ${{ runner.temp }}/hosted-probe
+            ${{ runner.temp }}/hosted-math
+          archive: true
+          if-no-files-found: error
+          retention-days: 14

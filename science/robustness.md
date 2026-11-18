@@ -7,17 +7,17 @@ The exact amplification theorem concerns isotropic inputs and ideal local instru
 Use squared overlap with the pure target as fidelity, and half trace distance
 
 ```math
-D(\rho,\sigma)=\tfrac12\|\rho-\sigma\|_1.
+D(\rho,\sigma)=\tfrac12\lVert \rho-\sigma\rVert _1.
 ```
 
-An instrument includes its classical outcome record. In particular, the ideal local map has two quantum-output branches, with Kraus operators $`C_+`$ and $`C_-`$, and a reject branch of weight $`\operatorname{Tr}[(I-C_+^\dagger C_+-C_-^\dagger C_-)\rho]`$. The reject branch has no retained quantum output. The direct sum of these branches is a completely positive trace-preserving channel, denoted $`\mathcal J`$.
+An instrument includes its classical outcome record. In particular, the ideal local map has two quantum-output branches, with Kraus operators $`C_+`$ and $`C_-`$, and a reject branch of weight $`\mathrm{Tr}[(I-C_+^\dagger C_+-C_-^\dagger C_-)\rho]`$. The reject branch has no retained quantum output. The direct sum of these branches is a completely positive trace-preserving channel, denoted $`\mathcal J`$.
 
 Suppose the implemented local channels obey
 
 ```math
-\tfrac12\|\widehat{\mathcal J}_A-\mathcal J_A\|_\diamond\le\eta_A,
+\tfrac12\lVert \widehat{\mathcal J}_A-\mathcal J_A\rVert _\diamond\le\eta_A,
 \qquad
-\tfrac12\|\widehat{\mathcal J}_B-\mathcal J_B\|_\diamond\le\eta_B.
+\tfrac12\lVert \widehat{\mathcal J}_B-\mathcal J_B\rVert _\diamond\le\eta_B.
 ```
 
 These bounds include all local gates, measurements and outcome labels used in the attempt. They are assumptions or externally established control specifications, not something inferred from the unknown target. Reliable classical comparison is ideal in the base model; any imperfect comparison can instead be included as an additional channel error. Complete instruments, rather than only their normalized success branches, make the error accounting meaningful under postselection.
@@ -46,7 +46,7 @@ D(\widehat\rho,\rho)\le\frac{e}{s}
 To prove this, the orthogonal accept/failure blocks give
 
 ```math
-\|\widehat\sigma-\sigma\|_1+|\widehat s-s|\le2e.
+\lVert \widehat\sigma-\sigma\rVert _1+|\widehat s-s|\le2e.
 ```
 
 Each term is at least $`|\widehat s-s|`$, proving the success bound. For the conditional states, write
@@ -57,7 +57,7 @@ Each term is at least $`|\widehat s-s|`$, proving the success bound. For the con
 +\widehat\sigma\left(\frac1{\widehat s}-\frac1s\right).
 ```
 
-The triangle inequality, $`\|\widehat\sigma\|_1=\widehat s`$, and the displayed block bound prove the conditional bound. No commutativity, isotropy or independence is required for this lemma. Its denominator is the ideal success probability. A sufficient condition for actual success is $`e<s`$.
+The triangle inequality, $`\lVert \widehat\sigma\rVert _1=\widehat s`$, and the displayed block bound prove the conditional bound. No commutativity, isotropy or independence is required for this lemma. Its denominator is the ideal success probability. A sufficient condition for actual success is $`e\lt s`$.
 
 ## One purification attempt
 
@@ -83,10 +83,10 @@ The complete instrument bound implies
 \widehat F\ge\frac{1+3f(p)}4-\frac{e}{s(p)}.
 ```
 
-In particular, for $`1/3<p<1`$, the following is a sufficient condition for fidelity strictly above the ideal input value $`(1+3p)/4`$:
+In particular, for $`1/3\lt p\lt 1`$, the following is a sufficient condition for fidelity strictly above the ideal input value $`(1+3p)/4`$:
 
 ```math
-e<s(p)\Delta_F(p)
+e\lt s(p)\Delta_F(p)
 =\frac{p(1-p^2)(3p-1)}{16}.
 ```
 
@@ -106,7 +106,7 @@ For unequal allowed ideal visibilities $`p_i\ge p_0>1/3`$, use the floor theorem
 \widehat F\ge\frac{1+3f(p_0)}4-\frac{e}{s_0}.
 ```
 
-It certifies amplification above the prescribed ideal quality floor when $`e<s_0\Delta_F(p_0)`$. It does not promise improvement over the best member of an unequal-quality batch.
+It certifies amplification above the prescribed ideal quality floor when $`e\lt s_0\Delta_F(p_0)`$. It does not promise improvement over the best member of an unequal-quality batch.
 
 ## Source perturbations and a fixed target
 
@@ -124,7 +124,7 @@ As a limited example, let the $`i`$th pair have target $`\Phi_{U_i}`$ and visibi
 
 ```math
 D(\rho_{p_i}(U_i),\rho_{p_i}(U))
-=p_i\sqrt{1-\frac{|\operatorname{Tr}(U^\dagger U_i)|^2}{4}}.
+=p_i\sqrt{1-\frac{|\mathrm{Tr}(U^\dagger U_i)|^2}{4}}.
 ```
 
 For a relative rotation through angle $`\theta_i`$, this is $`p_i|\sin(\theta_i/2)|`$. Summing these quantities supplies $`r`$ in the one-attempt theorem. This continuity bound does not establish indefinite purification with drifting targets. In particular, a fixed nonzero perturbation budget cannot preserve strict gain uniformly as $`p\to1`$.
@@ -157,7 +157,7 @@ The actual finite protocol then has
 \le\epsilon_{\rm id}+\frac{E}{1-\delta},
 ```
 
-provided $`E<1-\delta`$. The accepted output need not be isotropic. The proof compares the complete actual experiment with the complete ideal one before conditioning, so it does not feed a nonisotropic noisy output into an ideal isotropic recurrence.
+provided $`E\lt 1-\delta`$. The accepted output need not be isotropic. The proof compares the complete actual experiment with the complete ideal one before conditioning, so it does not feed a nonisotropic noisy output into an ideal isotropic recurrence.
 
 For target conditional infidelity $`\epsilon`$ and failure probability $`\delta_{\rm tot}`$, one explicit allocation is
 
@@ -173,13 +173,13 @@ This gives a sufficient finite-precision construction. It can be conservative; i
 
 ## Translating the budget to gate precision
 
-Let $`W`$ be the exact fixed local three-qubit unitary in [the implementation](implementation.md), and let its implementation $`\widehat W`$ satisfy $`\|\widehat W-W\|\le\xi`$ in operator norm, with a consistent global phase. Unitary-channel distance and postprocessing contractivity give
+Let $`W`$ be the exact fixed local three-qubit unitary in [the implementation](implementation.md), and let its implementation $`\widehat W`$ satisfy $`\lVert \widehat W-W\rVert \le\xi`$ in operator norm, with a consistent global phase. Unitary-channel distance and postprocessing contractivity give
 
 ```math
-\tfrac12\|\widehat{\mathcal J}-\mathcal J\|_\diamond\le\xi.
+\tfrac12\lVert \widehat{\mathcal J}-\mathcal J\rVert _\diamond\le\xi.
 ```
 
-If an exact circuit has $`L`$ unitary gates and each implemented gate has operator-norm error at most $`\xi/L`$, the telescoping product bound gives $`\|\widehat W-W\|\le\xi`$. Measurement and storage errors must be included separately. An angle-rounded gate $`\exp(-i\theta H)`$ with $`\|H\|\le1`$ has error at most the angle error, so a fixed continuous-control library needs angle precision $`O(\xi/L)`$, or $`O(\log(L/\xi))`$ bits per angle. A chosen fault-tolerant gate library must add its actual synthesis cost; the constant-size real-rotation model does not make arbitrary-angle gates free in that model.
+If an exact circuit has $`L`$ unitary gates and each implemented gate has operator-norm error at most $`\xi/L`$, the telescoping product bound gives $`\lVert \widehat W-W\rVert \le\xi`$. Measurement and storage errors must be included separately. An angle-rounded gate $`\exp(-i\theta H)`$ with $`\lVert H\rVert \le1`$ has error at most the angle error, so a fixed continuous-control library needs angle precision $`O(\xi/L)`$, or $`O(\log(L/\xi))`$ bits per angle. A chosen fault-tolerant gate library must add its actual synthesis cost; the constant-size real-rotation model does not make arbitrary-angle gates free in that model.
 
 The full-budget theorem permits, for example, equal local errors $`\eta_A=\eta_B\le E/(2G_{\max})`$ after reserving the other terms. This is an explicit sufficient requirement on local controls, not a certificate that a laboratory realizes it. Local gate calibration and a certified input-quality promise remain separate resources from learning the unknown entangled target.
 

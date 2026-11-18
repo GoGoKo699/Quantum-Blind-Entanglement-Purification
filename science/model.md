@@ -24,7 +24,7 @@ F_U(\rho)=\langle\Phi_U|\rho|\Phi_U\rangle,
 \qquad F_U(\rho_p(U))=\frac{1+3p}{4}.
 ```
 
-The state is entangled exactly when $p>1/3$, equivalently $F>1/2$. Indeed, the partial transpose has eigenvalues $(1+p)/4$ with multiplicity three and $(1-3p)/4$ once. Positivity of partial transpose is equivalent to separability in dimension two by two. Thus the interval $1/3<p<1$ is the whole noisy entangled isotropic family; it is not a high-fidelity approximation.
+The state is entangled exactly when $p>1/3$, equivalently $F>1/2$. Indeed, the partial transpose has eigenvalues $(1+p)/4$ with multiplicity three and $(1-3p)/4$ once. Positivity of partial transpose is equivalent to separability in dimension two by two. Thus the interval $1/3\lt p\lt 1$ is the whole noisy entangled isotropic family; it is not a high-fidelity approximation.
 
 ## Operations and output
 
@@ -50,7 +50,7 @@ f(p)=\frac{p(5p+1)}{3(2p^2-p+1)},\qquad
 s(p)=\frac{(p+1)(2p^2-p+1)}8.
 ```
 
-It strictly improves target fidelity for every $U$ and every $1/3<p<1$. The exact gain is
+It strictly improves target fidelity for every $U$ and every $1/3\lt p\lt 1$. The exact gain is
 
 ```math
 F_U\!\left(\rho_{f(p)}(U)\right)-F_U\!\left(\rho_p(U)\right)
@@ -71,7 +71,7 @@ A purified unknown $P_U$ is not automatically a standard calibrated Bell channel
 
 For any fixed nontrivial depolarizing noise in the entangled range, Zhao et al. prove that a two-to-one LOCC map cannot be nondegrading for every unknown two-qubit maximally entangled target and strictly improving for even one target. See Corollary 4 and supplemental Corollary 7 of [arXiv:2509.08691v2](https://arxiv.org/html/2509.08691v2), published as *Physical Review Letters* **136**, 090203 (2026). Their visibility convention is obtained by setting their global depolarizing parameter to $1-p$; local depolarization has the equivalent isotropic form on this orbit. The no-go theorem allows general LOCC and is inherited here.
 
-Together with the explicit three-input construction, this gives an exact heralded onset of three specimens for strictly improving the complete unknown-target family at each $1/3<p<1$. A one-input improvement would give a forbidden two-input map by discarding the second input. The onset concerns the number of noisy source pairs in one elementary block. It does not determine optimal success probability, optimal three-copy fidelity, minimum memory, or the onset for an always-output protocol.
+Together with the explicit three-input construction, this gives an exact heralded onset of three specimens for strictly improving the complete unknown-target family at each $1/3\lt p\lt 1$. A one-input improvement would give a forbidden two-input map by discarding the second input. The onset concerns the number of noisy source pairs in one elementary block. It does not determine optimal success probability, optimal three-copy fidelity, minimum memory, or the onset for an always-output protocol.
 
 ## Quality variation and scope
 

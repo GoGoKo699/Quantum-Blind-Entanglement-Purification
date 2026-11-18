@@ -15,7 +15,7 @@ Consider the accepted product branch $C\otimes\overline C$. It is a valid LOCC b
 Define the multiplicity chirality parameter
 
 ```math
-t=4\bigl[\operatorname{Im}(\overline a b)\bigr]^2,
+t=4\bigl[\mathrm{Im}(\overline a b)\bigr]^2,
 \qquad 0\le t\le1.
 ```
 
@@ -67,7 +67,7 @@ The denominator is strictly positive on $0\le p,t\le1$, since it is at least $1+
 \frac{\partial F_t(p)}{\partial t}
 =\frac{p(1-p)(p+1)(3p-1)(1+3p^2)}
 {2[1+3p^2-2tp^2(1-p)]^2}>0,
-\qquad 1/3<p<1.
+\qquad 1/3\lt p\lt 1.
 ```
 
 Thus the chiral values $t=1$ maximize target fidelity throughout this entire paired rank-one multiplicity-filter family. All real filters have $t=0$ and preserve the input fidelity exactly. This includes real rotations of the standard multiplicity basis, not just the individual filters $A$ and $B$.

@@ -128,11 +128,11 @@ The doubly controlled operation itself has an explicit reduction. Choose
 $V\in SU(2)$ with $V^2=U$. In chronological order, use
 
 ```math
-\operatorname{C}_{1}(V),\quad
-\operatorname{CNOT}_{0\to1},\quad
-\operatorname{C}_{1}(V^\dagger),\quad
-\operatorname{CNOT}_{0\to1},\quad
-\operatorname{C}_{0}(V),
+\mathrm{C}_{1}(V),\quad
+\mathrm{CNOT}_{0\to1},\quad
+\mathrm{C}_{1}(V^\dagger),\quad
+\mathrm{CNOT}_{0\to1},\quad
+\mathrm{C}_{0}(V),
 ```
 
 where each controlled $V$ targets qubit 2. On classical control bits $a,b$,
@@ -165,8 +165,7 @@ For phases $\phi_x$, define their Walsh coefficients
 \phi_x(-1)^{S\cdot x}.
 ```
 
-Then $D=e^{i\vartheta_\varnothing}\prod_{S\ne\varnothing}
-e^{i\vartheta_SZ_S}$. Compute the parity on the last qubit of $S$, apply
+Then $`D=e^{i\vartheta_\varnothing}\prod_{S\ne\varnothing}e^{i\vartheta_SZ_S}`$. Compute the parity on the last qubit of $S$, apply
 $R_z(-2\vartheta_S)$, and uncompute. The seven nonempty subsets use at most
 ten CNOTs and seven one-qubit rotations in total. The global phase is recorded
 separately and has no effect on the physical instrument.

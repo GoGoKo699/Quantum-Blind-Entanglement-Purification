@@ -14,5 +14,7 @@ Read in order: science/model.md, science/protocol.md, science/algebra.md, scienc
 - Scientific consequence, why the physical target is preserved, and distinction from a known Bell channel: science/interpretation.md.
 - Prior work and inherited proof/architecture: references/RELATED_WORK.md; structured citations: references/references.bib.
 - Commands, expected checks and their limits: verification/README.md.
+- Study route and the selected Nielsen–Chuang 2010 anchor: learning/README.md and learning/ANCHOR.md. The bridge translates fidelity, operations and target conventions and supplies a complete three-pair example.
+- Common project understanding map: learning/MILESTONES.md, exactly M01–M30 in background and innovation phases. Follow its dependencies; the map contains conceptual targets rather than personal learner state.
 
 Keep these distinctions explicit: squared-overlap fidelity versus half trace distance; per-attempt conditional output versus full finite-budget success; common quality floor versus best-input guarantee; pointwise product-mixture promise versus marginal floors; same unknown target versus known standard Bell output; specimen threshold versus memory lower bound; paired-filter optimization versus all-LOCC optimality; arbitrary one-qubit gate count versus Clifford+T cost. The two-copy impossibility and Schur architecture are inherited and credited. No target drift or general quantum-correlated noise theorem is asserted.
