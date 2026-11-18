@@ -7,7 +7,7 @@ Each laboratory processes its three qubits with a fixed Schur circuit and measur
 For independent inputs about one common unknown target,
 
 ```math
-\rho_p(U)=p\Phi_U+(1-p)I_4/4,\qquad 1/3<p<1,
+\rho_p(U)=p\Phi_U+(1-p)I_4/4,\qquad 1/3\lt p\lt 1,
 ```
 
 the accepted output is exactly $`\rho_{f(p)}(U)`$, where

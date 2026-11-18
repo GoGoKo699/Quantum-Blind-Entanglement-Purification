@@ -4,7 +4,7 @@ The proof uses the explicit local maps in [the protocol](protocol.md). Covarianc
 
 ## Multilinear calculation
 
-For $J\subseteq\{1,2,3\}$, let $T_J$ be the product input with $P$ on pairs in $J$ and $I_4/4$ on all remaining pairs. Put
+For $`J\subseteq\{1,2,3\}`$, let $T_J$ be the product input with $P$ on pairs in $J$ and $I_4/4$ on all remaining pairs. Put
 
 ```math
 q_J=\mathrm{Tr}\mathcal E(T_J),\qquad
@@ -113,17 +113,17 @@ F_{\rm out}(p)-\frac{1+3p}4
 =\frac{p(1-p)(3p-1)}{2(2p^2-p+1)}.
 ```
 
-This proves strict purification at every $1/3<p<1$. The endpoints and the remaining visibility range are explicit:
+This proves strict purification at every $1/3\lt p\lt 1$. The endpoints and the remaining visibility range are explicit:
 
 | Input visibility | Output visibility | Success | Interpretation |
 | --- | --- | --- | --- |
 | $p=0$ | $0$ | $1/8$ | Completely mixed input remains completely mixed. |
-| $0<p<1/3$ | $f(p)<p$ | Positive | This particular filter does not improve the separable interior. |
+| $0\lt p\lt 1/3$ | $f(p)\lt p$ | Positive | This particular filter does not improve the separable interior. |
 | $p=1/3$ | $1/3$ | $4/27$ | The separable boundary is fixed. |
-| $1/3<p<1$ | $p<f(p)<1$ | Positive | Strict improvement across the entire noisy entangled family. |
+| $1/3\lt p\lt 1$ | $p\lt f(p)\lt 1$ | Positive | Strict improvement across the entire noisy entangled family. |
 | $p=1$ | $1$ | $1/2$ | The pure unknown target is preserved. |
 
-For $1/3<p<1$,
+For $1/3\lt p\lt 1$,
 
 ```math
 1-f(p)=\frac{(1-p)(3-p)}{3(2p^2-p+1)}.

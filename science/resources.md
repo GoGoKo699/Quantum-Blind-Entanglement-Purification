@@ -4,7 +4,7 @@ The one-step map can be repeated without estimating the target orientation or th
 
 ## Source promise and levels
 
-Fix a common unknown two-qubit maximally entangled target $`\Phi_U`$ and a supplied visibility-floor promise $`1/3<p_0<1`$. The supplied pairs are independent isotropic states about that target, or a classical mixture of global product states for which **every latent input visibility** is at least $`p_0`$. A promise on marginal fidelities alone is insufficient. The target does not drift between specimens. No extra shared entanglement or quantum communication is supplied.
+Fix a common unknown two-qubit maximally entangled target $`\Phi_U`$ and a supplied visibility-floor promise $`1/3\lt p_0\lt 1`$. The supplied pairs are independent isotropic states about that target, or a classical mixture of global product states for which **every latent input visibility** is at least $`p_0`$. A promise on marginal fidelities alone is insufficient. The target does not drift between specimens. No extra shared entanglement or quantum communication is supplied.
 
 The floor is an input assumption, not a certification experiment performed by this protocol. If it is obtained by a separate source-calibration procedure, that procedure's specimens and confidence allowance must be added. The one-step filter needs neither the floor nor the actual visibility; a quantitative finite stopping rule needs the supplied floor. No target-orientation estimation is required in either case.
 
@@ -22,7 +22,7 @@ The exact unequal-quality map is increasing in each visibility. Therefore every 
 
 ## A concrete protocol with a hard input cap
 
-Choose a target squared-overlap infidelity $`0<\epsilon<3(1-p_0)/4`$ and failure allowance $`0<\delta<1`$. Compute the smallest integer $`j\ge1`$ such that
+Choose a target squared-overlap infidelity $`0\lt \epsilon\lt 3(1-p_0)/4`$ and failure allowance $`0\lt \delta\lt 1`$. Compute the smallest integer $`j\ge1`$ such that
 
 ```math
 \frac34(1-p_j)\le\epsilon.
@@ -80,7 +80,7 @@ Then
 
 ```math
 x_{\ell+1}=x_\ell q(p_\ell),\qquad
-\frac13\le q(p_\ell)\le q(p_0)<1.
+\frac13\le q(p_\ell)\le q(p_0)\lt 1.
 ```
 
 The derivative of $`q`$ is negative on $`[p_0,1]`$. Hence $`\sum_\ell x_\ell\le x_0/(1-q(p_0))`$. Moreover
@@ -89,7 +89,7 @@ The derivative of $`q`$ is negative on $`[p_0,1]`$. Hence $`\sum_\ell x_\ell\le 
 3q(p)-1=\frac{2(1-p^2)}{2p^2-p+1}=O_{p_0}(1-p).
 ```
 
-Consequently the product $`\prod_{\ell<j}3q(p_\ell)`$ converges to a finite positive constant. Thus
+Consequently the product $`\prod_{\ell\lt j}3q(p_\ell)`$ converges to a finite positive constant. Thus
 
 ```math
 x_j=\Theta_{p_0}(3^{-j}),\qquad
@@ -102,7 +102,7 @@ For the cost, $`s(p)\le1/2`$ and
 1-2s(p)=\frac{(1-p)(2p^2+3p+3)}4=O(1-p).
 ```
 
-Therefore $`\prod_{\ell<j}(2s(p_\ell))^{-1}`$ also converges to a finite positive constant, and
+Therefore $`\prod_{\ell\lt j}(2s(p_\ell))^{-1}`$ also converges to a finite positive constant, and
 
 ```math
 E_j=\Theta_{p_0}(6^j)
@@ -116,7 +116,7 @@ The hard-budget construction above consequently uses
 N=O_{p_0}\!\left(\epsilon^{-\log_3 6}\log\frac1\delta\right)
 ```
 
-for $`0<\delta\le1/2`$. This is the cost of the displayed architecture, not an optimal distillation law. The constants depend on the initial floor and are not uniform as $`p_0\downarrow1/3`$. The yield of this recursively purified single-output construction vanishes as the requested fidelity approaches one; no positive asymptotic communication rate follows.
+for $`0\lt \delta\le1/2`$. This is the cost of the displayed architecture, not an optimal distillation law. The constants depend on the initial floor and are not uniform as $`p_0\downarrow1/3`$. The yield of this recursively purified single-output construction vanishes as the requested fidelity approaches one; no positive asymptotic communication rate follows.
 
 For an explicit, conservative finite bound without asymptotic notation, let $`D_0=2p_0^2-p_0+1`$ and $`q_0=q(p_0)`$. The inequalities above give
 
