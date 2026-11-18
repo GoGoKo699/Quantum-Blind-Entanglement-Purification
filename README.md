@@ -34,11 +34,16 @@ For example, input target fidelity **0.70** becomes **0.785714** on acceptance, 
 
 Start with the [scientific reading route](science/README.md). The [protocol](science/protocol.md) gives the physical instrument and proves covariance; the [interpretation](science/interpretation.md) connects the phase choice, target preservation and resource costs. [Related work](references/RELATED_WORK.md) credits the two-copy obstruction, earlier local Schur filters and universal coding, while distinguishing their output promises. [The LLM guide](llms.txt) maps questions to authoritative proofs and checks.
 
+## Learn the project
+
+The [learning route](learning/README.md) connects Nielsen and Chuang's *Quantum Computation and Quantum Information*, 10th anniversary edition (2010), to this construction. Start with the [anchor bridge and worked example](learning/ANCHOR.md), then follow the [30-milestone map](learning/MILESTONES.md). The textbook supplies quantum-information foundations; the project supplies the chiral filters, finite-budget theorem and implementation bounds.
+
 ## Reproduce the checks
 
 ```bash
 python3 -m pip install -r verification/requirements.txt
 python3 verification/run_all.py
+python3 verification/check_learning.py
 ```
 
 The [verification guide](verification/README.md) explains exact symbolic contractions, full-matrix covariance and circuit checks, resource-distribution checks and noisy-instrument tests. Finite tests support their stated scope; the uniform guarantees follow from the written proofs and the cited two-copy theorem.

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "expressions": [
+    {
+      "path": "README.md",
+      "index": 1,
+      "source_sha256": "06affb5312408aeb817cf0db389cf197b975c82e39352f608b36ee2cbc6fe4f1",
+      "required_text": [
+        "1/3<p<1"
+      ]
+    },
+    {
+      "path": "README.md",
+      "index": 3,
+      "source_sha256": "03761ba55395f6c9c48d661e92f8205315de023ad594ade21c573c32b688f0f9",
+      "required_text": [
+        "f(p)=",
+        "p(5p+1)",
+        "3(2p2−p+1)",
+        "s(p)=",
+        "(p+1)(2p2−p+1)"
+      ]
+    },
+    {
+      "path": "science/algebra.md",
+      "index": 53,
+      "source_sha256": "2f13e0cdf97c5d083d84f85cb7d7934952a23269a886561ea52d05579057c98b",
+      "required_text": [
+        "Fout(p)=",
+        "7p2+1",
+        "4(2p2−p+1)"
+      ]
+    },
+    {
+      "path": "science/algebra.md",
+      "index": 91,
+      "source_sha256": "e1e75dc215515839041f41fba947791e57df4abd2d5ac78545ebf8441c794a33",
+      "required_text": [
+        "pi≥p0>1/3",
+        "g(p1,p2,p3)≥f(p0)>p0"
+      ]
+    }
+  ]
+}
