@@ -7,8 +7,8 @@ The proof uses the explicit local maps in [the protocol](protocol.md). Covarianc
 For $J\subseteq\{1,2,3\}$, let $T_J$ be the product input with $P$ on pairs in $J$ and $I_4/4$ on all remaining pairs. Put
 
 ```math
-q_J=\operatorname{Tr}\mathcal E(T_J),\qquad
-n_J=\operatorname{Tr}\!\left[P\mathcal E(T_J)\right].
+q_J=\mathrm{Tr}\mathcal E(T_J),\qquad
+n_J=\mathrm{Tr}\!\left[P\mathcal E(T_J)\right].
 ```
 
 Simultaneous specimen-permutation invariance makes both values depend only on $k=|J|$. Substituting the four rows of $C_\pm$ gives the following rational table. Both accepted records are included.
@@ -23,7 +23,7 @@ Simultaneous specimen-permutation invariance makes both values depend only on $k
 For clarity, this table is a finite contraction identity rather than a numerical inference. With $L_s=C_s\otimes C_{-s}$ and $|\Phi\rangle=\sum_b|bb\rangle/\sqrt2$, its entries are obtained from
 
 ```math
-q_J=\sum_{s=\pm}\operatorname{Tr}(L_sT_JL_s^\dagger),
+q_J=\sum_{s=\pm}\mathrm{Tr}(L_sT_JL_s^\dagger),
 \qquad
 n_J=\sum_{s=\pm}\langle\Phi|L_sT_JL_s^\dagger|\Phi\rangle.
 ```

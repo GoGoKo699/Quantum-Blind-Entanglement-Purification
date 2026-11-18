@@ -15,7 +15,7 @@ Consider the accepted product branch $C\otimes\overline C$. It is a valid LOCC b
 Define the multiplicity chirality parameter
 
 ```math
-t=4\bigl[\operatorname{Im}(\overline a b)\bigr]^2,
+t=4\bigl[\mathrm{Im}(\overline a b)\bigr]^2,
 \qquad 0\le t\le1.
 ```
 

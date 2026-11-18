@@ -8,7 +8,7 @@ python3 verification/run_all.py
 python3 verification/check_learning.py
 ```
 
-The development run used Python 3.12.14, NumPy 2.3.5 and SymPy 1.14.0. The resource check itself uses only the standard library. Each program also runs separately.
+The development run used Python 3.12.14, NumPy 2.3.5, SciPy 1.17.0 and SymPy 1.14.0. The resource check itself uses only the standard library. Each program also runs separately.
 
 | Program | What it checks | Expected outcome |
 |---|---|---|

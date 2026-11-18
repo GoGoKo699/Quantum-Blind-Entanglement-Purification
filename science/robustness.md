@@ -10,7 +10,7 @@ Use squared overlap with the pure target as fidelity, and half trace distance
 D(\rho,\sigma)=\tfrac12\|\rho-\sigma\|_1.
 ```
 
-An instrument includes its classical outcome record. In particular, the ideal local map has two quantum-output branches, with Kraus operators $`C_+`$ and $`C_-`$, and a reject branch of weight $`\operatorname{Tr}[(I-C_+^\dagger C_+-C_-^\dagger C_-)\rho]`$. The reject branch has no retained quantum output. The direct sum of these branches is a completely positive trace-preserving channel, denoted $`\mathcal J`$.
+An instrument includes its classical outcome record. In particular, the ideal local map has two quantum-output branches, with Kraus operators $`C_+`$ and $`C_-`$, and a reject branch of weight $`\mathrm{Tr}[(I-C_+^\dagger C_+-C_-^\dagger C_-)\rho]`$. The reject branch has no retained quantum output. The direct sum of these branches is a completely positive trace-preserving channel, denoted $`\mathcal J`$.
 
 Suppose the implemented local channels obey
 
@@ -124,7 +124,7 @@ As a limited example, let the $`i`$th pair have target $`\Phi_{U_i}`$ and visibi
 
 ```math
 D(\rho_{p_i}(U_i),\rho_{p_i}(U))
-=p_i\sqrt{1-\frac{|\operatorname{Tr}(U^\dagger U_i)|^2}{4}}.
+=p_i\sqrt{1-\frac{|\mathrm{Tr}(U^\dagger U_i)|^2}{4}}.
 ```
 
 For a relative rotation through angle $`\theta_i`$, this is $`p_i|\sin(\theta_i/2)|`$. Summing these quantities supplies $`r`$ in the one-attempt theorem. This continuity bound does not establish indefinite purification with drifting targets. In particular, a fixed nonzero perturbation budget cannot preserve strict gain uniformly as $`p\to1`$.
