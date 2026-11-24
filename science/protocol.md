@@ -60,7 +60,7 @@ K_+=C_+\otimes C_-,\quad K_-=C_-\otimes C_+.
 
 The tensor reordering is notation, not a remote physical gate. Every operation in the construction is local, followed by a comparison of classical records. Successful output qubits are already the physical spin-half outputs; there is no target-dependent correction.
 
-For the source model, the two accepted records have equal probabilities and the same normalized output. The announced success probability is the sum of both probabilities. Keeping only one accepted record would halve success without changing its conditional target fidelity.
+For isotropic inputs, the two accepted records have equal probabilities and the same normalized output. The announced success probability is the sum of both probabilities. Keeping only one accepted record would halve success without changing its conditional target fidelity.
 
 ## Exact covariance
 

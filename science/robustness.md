@@ -1,6 +1,6 @@
 # Imperfect controls and finite precision
 
-The exact amplification theorem concerns isotropic inputs and ideal local instruments. Its robustness is quantitative but not uniform all the way to a pure target: the ideal gain vanishes as the input becomes pure. This page gives sufficient error budgets, rather than a hardware threshold or an assertion that fixed noisy gates permit unlimited purification.
+The quantitative recurrence examples on this page use the ideal isotropic protocol as their reference. Its gain vanishes near purity. The following bounds give sufficient accuracy for a fixed finite purification goal and account for both apparatus and source errors.
 
 ## A composable error convention
 
