@@ -49,7 +49,25 @@ jobs:
           git --version | tee -a "$RUNNER_TEMP/verification/runtime.log"
           python -m pip install --disable-pip-version-check -r verification/requirements.txt 2>&1 | tee "$RUNNER_TEMP/verification/python-install.log"
           npm install --prefix "$RUNNER_TEMP/math-runtime" --ignore-scripts --no-audit --no-fund playwright@1.56.1 mathjax-full@3.2.1 2>&1 | tee "$RUNNER_TEMP/verification/node-install.log"
-          node "$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js" install --with-deps chromium 2>&1 | tee "$RUNNER_TEMP/verification/browser-install.log"
+          playwright_cli="$RUNNER_TEMP/math-runtime/node_modules/playwright/cli.js"
+          browser_log="$RUNNER_TEMP/verification/browser-install.log"
+          node "$playwright_cli" install --only-shell chromium 2>&1 | tee "$browser_log"
+          smoke_chromium() {
+            NODE_PATH="$RUNNER_TEMP/math-runtime/node_modules" node -e '
+              const {chromium} = require("playwright");
+              chromium.launch({headless: true}).then(async browser => {
+                console.log("Chromium " + browser.version());
+                await browser.close();
+              }).catch(error => {
+                console.error(error);
+                process.exitCode = 1;
+              });
+            '
+          }
+          if ! smoke_chromium 2>&1 | tee -a "$browser_log"; then
+            timeout 120s node "$playwright_cli" install-deps chromium 2>&1 | tee -a "$browser_log"
+            smoke_chromium 2>&1 | tee -a "$browser_log"
+          fi
       - name: Verify the scientific account
         if: ${{ !cancelled() && steps.runtime.outcome == 'success' }}
         run: python verification/run_all.py 2>&1 | tee "$RUNNER_TEMP/verification/science.log"
