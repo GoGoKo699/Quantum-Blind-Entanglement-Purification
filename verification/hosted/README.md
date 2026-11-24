@@ -4,11 +4,11 @@ The collector visits the actual public, commit-pinned GitHub pages in a fresh un
 
 The [text contract](math-contract.json) additionally requires the visible headline map, entangled interval and quality-floor inequalities. It strengthens the full structural comparison without exempting any expression.
 
-The four scripts here are copied unchanged from [Guinevere at revision 2436d17](https://github.com/GoGoKo699/Guinevere/tree/2436d17d5aa3c73dd7a46e1341f7c83a01d9360b/plugins/merlin-arthur-research/skills/merlin-arthur-research/scripts). Their original Git blob identifiers are:
+The four scripts here are copied unchanged from [Guinevere at revision 39f8043](https://github.com/GoGoKo699/Guinevere/tree/39f8043d14ab5c743e8efe6a328b8a10369698ad/plugins/merlin-arthur-research/skills/merlin-arthur-research/scripts). Their original Git blob identifiers are:
 
 | File | Git blob |
 | --- | --- |
-| `capture_hosted_math.cjs` | `6f36ee03223a82d0075da2fe903f21bc5a45a75b` |
+| `capture_hosted_math.cjs` | `e8d2c87b345b1c94c11e01b8661f92e4abf8d97d` |
 | `probe_hosted_math.cjs` | `f83ea9da799bee0b53bd5c57315ae2b4b2d9de43` |
 | `check_rendered_math.py` | `1d3bf9810d0dfadb844a48b354af80f9b66924bc` |
 | `check_completion.py` | `d4b9bd29ecefb49998a1859fb4f2443908448be4` |
@@ -32,5 +32,7 @@ NODE_PATH=/absolute/temporary/runtime/node_modules node verification/hosted/capt
   --contract verification/hosted/math-contract.json \
   --output /absolute/new-empty-capture-directory
 ```
+
+On an exact pinned navigation that returns HTTP 502, 503 or 504, the collector retries once. After a transient interruption, a fresh output directory and `--resume-from` can reuse passing receipts only when the source, scope, contract, helpers, runtime and receipt freshness agree.
 
 A passing probe covers one page only. A passing full structural report still requires actual screenshot inspection against the source; neither establishes scientific correctness. Keep failed reports distinct from later successful captures. The completion checker validates supplied evidence consistency and does not create missing observations.

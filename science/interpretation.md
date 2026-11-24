@@ -10,7 +10,7 @@ The resulting physical output transforms under the same unknown local unitaries 
 
 ## What three copies establish
 
-The inherited general two-copy no-go and the explicit three-copy filter give a sharp minimum specimen block for the stated blind purification task. The construction works at every visibility above the separability boundary, and its control does not depend on the visibility. This is stronger than a numerical example or a perturbative high-fidelity gain. Its unequal-quality theorem also permits a source with a certified common lower floor while actual product-source qualities vary.
+The inherited general two-copy no-go and the explicit three-copy filter give a sharp minimum specimen block for the stated blind purification task. The construction raises every common fidelity floor above one half when the pairs have maximally mixed marginals and the same unknown dominant Bell eigenvector. The laboratories can use the same circuit when preparation or storage changes the error axes from pair to pair. The [heterogeneous proof](anisotropic-noise.md) gives the sharp worst case and identifies why the two accepted records must be pooled.
 
 The same conclusion does not require three to be the smallest coherent memory: sequential architectures, work qubits and other models have separate memory questions. The supplied elementary implementation uses three received qubits per laboratory and no extra quantum register. Its 194 CNOTs and 227 arbitrary one-qubit gates are an unoptimized compilation bound. A useful hardware implementation would require its own gate model, timing and observed noise specifications.
 
@@ -18,11 +18,11 @@ The same conclusion does not require three to be the smallest coherent memory: s
 
 Near purity, each successful level reduces infidelity by a factor approaching three, while the elementary success probability approaches one half. Combining three children with retries therefore makes the displayed mean source cost grow by a factor approaching six per level. The achieved single-output cost exponent is consequently $`\log_3 6`$, rather than a claim of positive asymptotic yield. A finite cap and restarts turn this into a fixed-confidence resource guarantee with every rejected batch counted.
 
-The constants worsen near the separability boundary. The explicit finite example in [resources](resources.md) makes that cost visible; a three-copy onset alone says little about the complete expense of a very pure output.
+The constants worsen near the separability boundary. The [finite example](resources.md#a-numerical-budget-example) counts the resulting specimen cost. Near purity, a [larger cyclic block](near-pure-limit.md) can reduce the first-order error by the full specimen count. The input and heralding costs of that block enter the specimen budget separately.
 
 ## Real apparatus errors
 
-The exact isotropic map should not be repeatedly applied to an arbitrary noisy, nonisotropic output. Instead, [robustness](robustness.md) compares complete flagged instruments and then the entire finite adaptive experiment before conditioning. This yields a sufficient accuracy requirement for any chosen finite target error. It permits a concrete precision budget without assuming that the accepted state remains isotropic under implementation errors.
+The ideal heterogeneous recurrence needs the same Bell eigenvector and maximally mixed marginals. Hardware errors can violate both conditions. Instead, [robustness](robustness.md) compares complete flagged instruments and then the entire finite adaptive experiment before conditioning. This yields a sufficient accuracy requirement for any chosen finite target error. It permits a concrete precision budget without assuming that the accepted state remains isotropic under implementation errors.
 
 A fixed arbitrary control-error allowance cannot guarantee unlimited purity: a final local depolarizing error already creates a nonzero infidelity floor. The method therefore supplies an ideal constructive protocol and explicit finite-precision requirements, with practical yield and hardware performance left to their actual physical models.
 

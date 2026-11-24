@@ -114,13 +114,13 @@
     },
     {
       "path": "science/resources.md",
-      "index": 48,
+      "index": 73,
       "source_sha256": "74e19f6667229dd7cf38a42e0cc04e2b1967f36d838d3860612fb77d8e8a784b",
       "expected_text": "∏ℓ<j3q(pℓ)"
     },
     {
       "path": "science/resources.md",
-      "index": 52,
+      "index": 77,
       "source_sha256": "5ca632a465362157bd6ff5e52da7d7b44d120d33f72fe9cc8f00d77eeb4b4820",
       "expected_text": "∏ℓ<j(2s(pℓ))−1"
     },
@@ -195,6 +195,145 @@
       "index": 78,
       "source_sha256": "dcec2e59b53715d5b7ae797e089db985fe0041eb7d2c25abc26ec2beebc94ce5",
       "expected_text": "‖H‖≤1"
+    },
+    {
+      "path": "science/anisotropic-noise.md",
+      "index": 6,
+      "source_sha256": "95ec7ef519e6b52cf143135a52760e924447a76585d94407774564d892b1a02b",
+      "required_text": [
+        "W(w)=",
+        "3w3+r3",
+        "w2r+3wr2",
+        ">w"
+      ]
+    },
+    {
+      "path": "science/anisotropic-noise.md",
+      "index": 45,
+      "source_sha256": "9c88098fb5d4465230ae6187ce744410c7b430f079fc90230d8e9d448ff0ad03",
+      "required_text": [
+        "Θ(C+MC+†)Θ−1",
+        "(−1)kC−MC−†"
+      ]
+    },
+    {
+      "path": "science/anisotropic-noise.md",
+      "index": 74,
+      "source_sha256": "8702197160c3c235514c2813411013a2cb2b52dfa4b9cefa3d98be79b269eeda",
+      "required_text": [
+        "N=",
+        "r3(1−S+2T)",
+        "E=",
+        "r3(S+6T)"
+      ]
+    },
+    {
+      "path": "science/anisotropic-noise.md",
+      "index": 77,
+      "source_sha256": "559da0640cf4abd70cf325c87a48bb320596f74b28d563687c0e508f932e0fe2",
+      "required_text": [
+        "rN−wE=",
+        "r(1−2r)",
+        "(1−2r)(2−r)",
+        "+rS−2r2T"
+      ]
+    },
+    {
+      "path": "science/near-pure-limit.md",
+      "index": 13,
+      "source_sha256": "efcb7d9960f9809e7558d5b4d30698f18703718a0e84183bc5cacaac18bd3fc2",
+      "required_text": [
+        "εU′≥",
+        "ε(1−ε)n−1",
+        "liminf",
+        "≥1n"
+      ]
+    },
+    {
+      "path": "science/near-pure-limit.md",
+      "index": 61,
+      "source_sha256": "c39f50938202a97e4025a9314dcb646b2525fb352701ac5aed74fcdc9d4f96fb",
+      "required_text": [
+        "Cσa(j)C†=",
+        "σa⊗I+I⊗2Ja(J)"
+      ]
+    },
+    {
+      "path": "science/near-pure-limit.md",
+      "index": 106,
+      "source_sha256": "a26d2b38abafc132cc524ecff199b898f15f4184aaec74f4123641209390ade5",
+      "required_text": [
+        "sU≥1−O(",
+        "n32−n/2"
+      ]
+    },
+    {
+      "path": "science/near-pure-limit.md",
+      "index": 135,
+      "source_sha256": "dd09fad120c695f11a0e76653af758b37f542540e1be046f7683123400d46076",
+      "required_text": [
+        "εU′≤",
+        "n(1−ε)",
+        "(n2)ε2",
+        "s(1−ε)n"
+      ]
+    },
+    {
+      "path": "science/near-pure-limit.md",
+      "index": 174,
+      "source_sha256": "d326f9bafa9fa0aa5215eedb5708cfcbd34b29c1f50131b26e7d9def9bebd57a",
+      "required_text": [
+        "BkEk=",
+        "E0∏",
+        "1+Cnj3Ej",
+        "<∞"
+      ]
+    },
+    {
+      "path": "README.md",
+      "index": 6,
+      "source_sha256": "01c3c9d43b9807df5443b35b5da08204333f11b0b4f677ab73f9a40ffc712cfe",
+      "required_text": [
+        "n≥3"
+      ]
+    },
+    {
+      "path": "README.md",
+      "index": 7,
+      "source_sha256": "f22557cb9141aa642c587f325bd419437293e3ee1c93543a03689c2d6eb0d934",
+      "required_text": [
+        "1/n"
+      ]
+    },
+    {
+      "path": "learning/README.md",
+      "index": 25,
+      "source_sha256": "22d36b862c255058abc1bc51e6ad578ddcb205f17efa94240ec3cc1d833bb3b1",
+      "required_text": [
+        "W(w)=",
+        "3w3+r3",
+        "w2r+3wr2",
+        ">w"
+      ]
+    },
+    {
+      "path": "learning/README.md",
+      "index": 31,
+      "source_sha256": "912db3eb3d42ad73a86c219242db7f8fb9c256713a529d375878bbbc9ffc8ed5",
+      "required_text": [
+        "ε/3+O(ε2)"
+      ]
+    },
+    {
+      "path": "science/resources.md",
+      "index": 43,
+      "source_sha256": "582b16411a4287c166ac498eca8b4f2c616fd74b87a804ca400ad522820e617b",
+      "required_text": [
+        "wl+1=W(wl)",
+        "sl=wl32",
+        "Ej=",
+        "3sl"
+      ]
     }
   ]
 }

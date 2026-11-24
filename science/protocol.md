@@ -50,7 +50,7 @@ C_sC_s^\dagger=I_2,\qquad C_+C_-^\dagger=0.
 
 Thus $P_s=C_s^\dagger C_s$ are orthogonal rank-two projectors. Their sum is the spin-half projector, and $P_{3/2}=I_8-P_+-P_-$ is a positive rank-four reject projector. Measuring these three orthogonal sectors and decoding the accepted spin-half sector realizes an ordinary trace-nonincreasing local quantum instrument. Rejecting all spin-three-halves outcomes completes it to a trace-preserving instrument when the classical reject flag is included.
 
-Alice and Bob each apply this instrument and report $+$, $-$ or reject. Keep a pair precisely for $(+,-)$ or $(-,+)$. After reordering tensor factors into $A_1A_2A_3:B_1B_2B_3$, the accepted map is
+Alice and Bob each apply this instrument and report $+$, $-$ or reject. Keep a pair precisely for $(+,-)$ or $(-,+)$. For [different noise axes](anisotropic-noise.md), pool the two accepted records into one success outcome before using the output again. After reordering tensor factors into $A_1A_2A_3:B_1B_2B_3$, the accepted map is
 
 ```math
 \mathcal E(X)=K_+XK_+^\dagger+K_-XK_-^\dagger,
@@ -60,7 +60,7 @@ K_+=C_+\otimes C_-,\quad K_-=C_-\otimes C_+.
 
 The tensor reordering is notation, not a remote physical gate. Every operation in the construction is local, followed by a comparison of classical records. Successful output qubits are already the physical spin-half outputs; there is no target-dependent correction.
 
-For the source model, the two accepted records have equal probabilities and the same normalized output. The announced success probability is the sum of both probabilities. Keeping only one accepted record would halve success without changing its conditional target fidelity.
+For isotropic inputs, the two accepted records have equal probabilities and the same normalized output. The announced success probability is the sum of both probabilities. Keeping only one accepted record would halve success without changing its conditional target fidelity.
 
 ## Exact covariance
 
