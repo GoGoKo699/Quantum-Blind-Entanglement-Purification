@@ -8,7 +8,7 @@ The target is the unknown physical two-qubit maximally entangled state $`\lvert\
 
 ```math
 \rho_{U,\epsilon}=(1-\epsilon)P_U+\epsilon\tau_U,
-\qquad \operatorname{Tr}\tau_U=1,\quad \tau_U\ge0,\quad P_U\tau_U=0.
+\qquad \mathrm{Tr}\tau_U=1,\quad \tau_U\ge0,\quad P_U\tau_U=0.
 ```
 
 Here $`\epsilon`$ is the input infidelity. The noise can put different weights on the three orthogonal Bell directions, and the result below allows any density operator on their span. The block size $`n`$ is fixed as $`\epsilon\downarrow0`$. Fidelity is the squared overlap with the *same* physical target.
@@ -70,7 +70,7 @@ At one laboratory let $`R`$ cyclically shift its $`n`$ physical qubits. It commu
 
 Here $`V_j`$ is the spin-$`j`$ representation. The first factor is a physical qubit output after local decoding, and the second is discarded locally. Choose any collection of mutually orthogonal blocks of this form. Both parties measure the block label. Alice uses the selected basis and Bob its conjugate in the computational basis. They keep a block when their labels agree on one of the chosen blocks, decode, and each discard the spin-$`J`$ register.
 
-To see the pure acceptance and the error response, group the input into laboratory registers. Use $`\operatorname{vec}(M)=\sum_{ij}M_{ij}\lvert i\rangle_A\lvert j\rangle_B`$. Write $`V=U^{\mathsf T}`$ so the grouped pure input is $`2^{-n/2}\operatorname{vec}(V^{\otimes n})`$. In a matched block of dimension $`d_{\mathcal B}=2(2J+1)`$, its projected amplitude is $`2^{-n/2}\operatorname{vec}(V\otimes D_J(V))`$, where $`D_J(V)`$ is the spectator rotation. This factors into the target Bell vector on the decoded qubits and a normalized maximally entangled spectator state up to the overall amplitude. The matched block has probability $`s_{\mathcal B}=d_{\mathcal B}/2^n`$.
+To see the pure acceptance and the error response, group the input into laboratory registers. Use $`\mathrm{vec}(M)=\sum_{ij}M_{ij}\lvert i\rangle_A\lvert j\rangle_B`$. Write $`V=U^{\mathsf T}`$ so the grouped pure input is $`2^{-n/2}\mathrm{vec}(V^{\otimes n})`$. In a matched block of dimension $`d_{\mathcal B}=2(2J+1)`$, its projected amplitude is $`2^{-n/2}\mathrm{vec}(V\otimes D_J(V))`$, where $`D_J(V)`$ is the spectator rotation. This factors into the target Bell vector on the decoded qubits and a normalized maximally entangled spectator state up to the overall amplitude. The matched block has probability $`s_{\mathcal B}=d_{\mathcal B}/2^n`$.
 
 All one-specimen compressions of a Pauli matrix into $`\mathcal B`$ coincide. Rotating one position to another by $`R`$ changes only a cancelling scalar phase on this eigenspace. The sum over positions is the generator of the collective rotation. Thus, writing $`C`$ for the local identification of the subspace with its decoded factors,
 
