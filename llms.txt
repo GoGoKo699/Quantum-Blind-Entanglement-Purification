@@ -1,12 +1,14 @@
 # Quantum Blind Entanglement Purification
 
-The project supplies a fixed three-copy LOCC chiral Schur filter that improves an unknown two-qubit maximally entangled target under isotropic noise, preserving the same target. It includes exact formulas, a quality-floor extension, finite-budget recursion, an elementary local circuit and composable implementation-error bounds.
+The fixed three-pair LOCC chiral Schur filter improves a common fidelity floor for independent two-qubit pairs with maximally mixed marginals and the same unknown dominant Bell eigenvector. Error strengths and axes may differ. A larger local cyclic block attains the optimal near-pure first-order infidelity factor 1/n for every fixed n>=3. The project includes exact isotropic formulas, counted recursion, circuit and finite-precision bounds.
 
-Read in order: science/model.md, science/protocol.md, science/algebra.md, science/chirality.md, science/resources.md, science/implementation.md, science/robustness.md, science/interpretation.md. science/README.md is the connected entrypoint.
+Start at science/README.md, then read science/model.md, science/protocol.md, science/anisotropic-noise.md and science/near-pure-limit.md for the model and central results.
 
 - Exact state/input/output/success conventions and inherited minimum specimen threshold: science/model.md.
 - Physical local maps, complete instrument and unknown-target covariance: science/protocol.md.
 - Equal/unequal-visibility contractions, gain and floor under classical product mixtures: science/algebra.md.
+- Exact worst heterogeneous common floor, explicit orthogonal-axis example, and pooled-sign output invariant: science/anisotropic-noise.md.
+- Arbitrary-map tangent converse, cyclic optimum for every n>=3, pure success and finite-noise qualifications: science/near-pure-limit.md.
 - Optimization within paired rank-one multiplicity filters, including zero gain for real filters: science/chirality.md.
 - All failed attempts, deterministic native-pair cap, confidence, achieved exponent, streaming storage, messages and elapsed-time upper bound: science/resources.md.
 - Fixed local matrix, chronological gate compiler, unoptimized CNOT/one-qubit counts and precision convention: science/implementation.md.
@@ -17,4 +19,4 @@ Read in order: science/model.md, science/protocol.md, science/algebra.md, scienc
 - Study route and the selected Nielsen–Chuang 2010 anchor: learning/README.md and learning/ANCHOR.md. The bridge translates fidelity, operations and target conventions and supplies a complete three-pair example.
 - Common project understanding map: learning/MILESTONES.md, exactly M01–M30 in background and innovation phases. Follow its dependencies; the map contains conceptual targets rather than personal learner state.
 
-Keep these distinctions explicit: squared-overlap fidelity versus half trace distance; per-attempt conditional output versus full finite-budget success; common quality floor versus best-input guarantee; pointwise product-mixture promise versus marginal floors; same unknown target versus known standard Bell output; specimen threshold versus memory lower bound; paired-filter optimization versus all-LOCC optimality; arbitrary one-qubit gate count versus Clifford+T cost. The two-copy impossibility and Schur architecture are inherited and credited. No target drift or general quantum-correlated noise theorem is asserted.
+Keep these distinctions explicit: squared-overlap fidelity versus half trace distance; per-attempt conditional output versus full finite-budget success; common quality floor versus best-input guarantee; pointwise product-mixture promise versus marginal floors; same unknown target versus known standard Bell output; specimen threshold versus memory lower bound; sharp fixed-filter heterogeneous envelope versus fixed-block near-pure optimum; arbitrary one-qubit gate count versus Clifford+T cost. The two-copy impossibility and Schur architecture are inherited and credited. No target drift or general quantum-correlated noise theorem is asserted.

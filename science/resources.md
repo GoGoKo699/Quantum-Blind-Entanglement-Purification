@@ -68,6 +68,23 @@ A run is aborted precisely when uncapped preparation would require more than $`B
 
 The conclusion is heralded. An abort is an explicit failure flag, not an uncharged or silently omitted event. On success the output is isotropic, so its half-trace distance to $`\Phi_U`$ equals its squared-overlap infidelity. Preparing a fixed local product output on final failure instead gives unconditional target infidelity at most $`\epsilon+\delta`$ and half-trace distance at most $`\epsilon+\delta`$; that different output convention also charges the two local output initializations.
 
+## Different noise axes
+
+The [sharp heterogeneous floor](anisotropic-noise.md) supplies a recurrence for independent pairs with maximally mixed marginals, a shared unknown dominant Bell eigenvector and a certified overlap floor $`w_0\gt1/2`$. Use only the pooled chirality success flag at every node. At level $`\ell`$, put
+
+```math
+w_{\ell+1}=W(w_\ell),\qquad s_\ell=\frac{w_\ell^3}{2},\qquad
+E_j=\prod_{\ell=0}^{j-1}\frac{3}{s_\ell}.
+```
+
+The floor refers to fidelity, rather than the isotropic visibility used above. Every reached node succeeds with probability at least $`s_\ell`$ conditional on the preceding pooled record. The same conditional-expectation proof gives mean native-pair consumption at most $`E_j`$. For the least $`j`$ with $`w_j\ge1-\epsilon`$, the previous cap-and-restart rule uses $`B=\lceil 2E_j\rceil`$ and $`R=\lceil \log_2(1/\delta)\rceil`$. The success probability is at least $`1-\delta`$ and the hard native input cap is $`BR`$. The argument also applies to the stated latent product mixtures, using the pointwise bounds and reweighting the components by the record.
+
+For $`w_0=0.70`$, $`\epsilon=0.01`$ and $`\delta=0.05`$, six levels give $`w_6\simeq0.99347798`$. The conservative mean bound is about $`909{,}650.24`$, the per-run cap is $`1{,}819{,}301`$, and five runs cap the input at $`9{,}096{,}505`$ native pairs. The depth-first schedule holds at most 13 incoming pair halves per laboratory, plus compiler workspace. These guarantees use the sharp floor for one application and a lower bound on success. The protections against heterogeneous sources make this cap larger than the isotropic cap in the [worked example](#a-numerical-budget-example).
+
+For fixed $`w_0`$, the update increases to one. Its near-pure error ratio is $`1/3+O(1-w_\ell)`$. The errors become summable, so the constant-factor comparison with $`3^{-\ell}`$ holds by multiplying the successive ratios. Also $`3/s_\ell=6(1+O(1-w_\ell))`$. The same architecture thus has a hard cap of order at most $`\epsilon^{-\log_3 6}\log(1/\delta)`$ for fixed $`w_0`$, with constants depending on that floor. Near the separability boundary the gain is only $`3(w-1/2)^2+O((w-1/2)^3)`$.
+
+A [schedule of larger blocks](near-pure-limit.md#expected-specimen-cost-at-fixed-isotropic-input-quality) bounds expected specimen cost by a constant times inverse target error after initial chiral preparation for iid isotropic inputs. The local basis changes and storage differ from the three-pair circuit.
+
 ## Accuracy dependence at a fixed initial floor
 
 Put $`x_\ell=1-p_\ell`$ and

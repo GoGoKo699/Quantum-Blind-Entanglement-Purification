@@ -1,6 +1,6 @@
 # Thirty milestones: from a noisy pair to a blind purifier
 
-This map follows the scientific task: improve a noisy entangled specimen while preserving its unknown physical target. It has **12 background/preliminaries milestones** and **18 narrative/innovation milestones**. The background joins individual states, local operations and symmetry into the precise task. The narrative joins the chiral filter, its proof, recursive use and apparatus requirements into the complete contribution. The allocation gives the extra space to the new mechanism and its consequential resource and error qualifications.
+This map follows the scientific task of improving a noisy entangled specimen while preserving its unknown physical target. It has **12 background/preliminaries milestones** and **18 narrative/innovation milestones**. The background joins individual states, local operations and symmetry into the precise task. The narrative connects the chiral filter and its noise guarantees to near-pure optimality, recursive use and apparatus requirements.
 
 The one educational anchor is Michael A. Nielsen and Isaac L. Chuang, *Quantum Computation and Quantum Information*, 10th Anniversary Edition (2010), abbreviated **N&C** below. Chapter pointers identify foundations, not textbook proofs of the new results. The canonical project files supply the additional representation theory, calculations and resource arguments. Research-level imported results retain their primary citations. This is a common understanding map; it does not claim coverage of every technical lemma.
 
@@ -188,50 +188,50 @@ The one educational anchor is Michael A. Nielsen and Isaac L. Chuang, *Quantum C
 - **Conceptual connection:** The lower bound is an imported research theorem with a model-specific scope, while the present operation supplies the matching constructive endpoint.
 - **Source pointers:** N&C Ch. 12 supplies entanglement-processing context; [threshold and cited Zhao et al. theorem](../science/model.md); [attribution and comparison](../references/RELATED_WORK.md).
 
-### M21 — Amplifying a floor when qualities differ
+### M21 — Amplifying an isotropic quality floor
 
 - **Phase:** Narrative/innovation.
 - **Central question:** What guarantee survives if the three source pairs have unequal and unknown qualities?
-- **Understanding target:** Explain the exact symmetric-polynomial output and coordinatewise monotonicity; use them to distinguish amplification of a certified common floor from improvement over the best input.
-- **Dependencies and story role:** M04, M17–M18. Remove equality of qualities without dropping the restricted source model.
-- **Conceptual connection:** The circuit remains unchanged, while the floor theorem enables later recursion on outputs whose actual visibilities need not be known.
-- **Source pointers:** N&C Ch. 8, linearity; [unequal-quality map and monotonicity proof](../science/algebra.md); [best-input comparison boundary](../references/RELATED_WORK.md).
+- **Understanding target:** Use the symmetric-polynomial output and coordinatewise monotonicity to explain the common-floor guarantee. Show how acceptance reweights a classical mixture of product inputs whose latent components meet the floor.
+- **Dependencies and story role:** M04, M06 and M17–M18. Extend the isotropic result to varying qualities and identify the conditional source promise used in recursion.
+- **Conceptual connection:** The floor applies to every latent component. Observing acceptance may change the distribution over components while preserving their shared guarantee.
+- **Source pointers:** N&C Chs. 2 and 8, mixtures and selective operations. [Unequal qualities, monotonicity and classical mixtures](../science/algebra.md) · [Conditional-history promise](../science/resources.md).
 
-### M22 — Conditioning on a classically varying source
+### M22 — Finding the worst Pauli error axes
 
 - **Phase:** Narrative/innovation.
-- **Central question:** Why can some classical quality correlations be allowed while marginal fidelity floors are insufficient?
-- **Understanding target:** Explain a mixture of global product inputs with a pointwise floor in every latent component, and why acceptance reweights components without violating that floor.
-- **Dependencies and story role:** M06 and M21. State the source promise that remains stable after the protocol observes records.
-- **Conceptual connection:** The conditional product-mixture structure permits recursive regrouping; arbitrary quantum-correlated errors or drifting targets do not follow from this argument.
-- **Source pointers:** N&C Chs. 2 and 8, mixtures and selective operations; [classical-mixture extension](../science/algebra.md); [conditional-history promise](../science/resources.md).
+- **Central question:** How does pair-to-pair variation in the Pauli error axis affect accepted fidelity?
+- **Understanding target:** Relate the pooled accepted overlap and success probability to the dot products of the three error axes. Explain why rank-two inputs with mutually orthogonal error axes attain the exact worst fidelity given a common floor above one half.
+- **Dependencies and story role:** M03–M05 and M15–M18. Use the same local instrument on a source with anisotropic noise.
+- **Conceptual connection:** The geometry of the three axes determines the guarantee. The conditional fidelity at the worst axes still exceeds the common input fidelity.
+- **Source pointers:** N&C Chs. 2 and 8, Pauli operators and linear quantum operations. [Sharp fidelity floor](../science/anisotropic-noise.md).
 
 ### M23 — Recursion toward the same pure target
 
 - **Phase:** Narrative/innovation.
 - **Central question:** How can accepted outputs become inputs without learning their orientation or actual quality?
-- **Understanding target:** Explain successful purification levels, increasing visibility floors and convergence to purity; distinguish conditional convergence from the probability and cost of completing a level.
-- **Dependencies and story role:** M18 and M21–M22. Extend the elementary mechanism into a reusable construction.
-- **Conceptual connection:** Covariance preserves the target and the floor theorem preserves the input promise at each successful level; failures still have to be charged.
-- **Source pointers:** N&C Ch. 12, recursive entanglement processing; [fixed points and convergence](../science/algebra.md); [level construction](../science/resources.md).
+- **Understanding target:** Explain successful purification levels, increasing fidelity floors and convergence to purity for each admitted model. Explain why pooling both accepted chirality outcomes makes the anisotropic update reusable.
+- **Dependencies and story role:** M18 and M21–M22. Turn each one-step floor theorem into a recursive construction.
+- **Conceptual connection:** Each successful level preserves its source promise at a higher fidelity floor. Acceptance probability and the cost of completing a level must also be tracked.
+- **Source pointers:** N&C Ch. 12, recursive entanglement processing. [Isotropic fixed points and convergence](../science/algebra.md) · [Anisotropic closure](../science/anisotropic-noise.md) · [Level construction](../science/resources.md).
 
 ### M24 — From an expected cost to a hard budget
 
 - **Phase:** Narrative/innovation.
 - **Central question:** How can one promise finite input consumption and a specified probability of obtaining an output?
 - **Understanding target:** Explain the conditional expected-cost recurrence, the Markov bound for one capped run and the cap-and-restart guarantee, including all rejected children and aborted runs.
-- **Dependencies and story role:** M11 and M22–M23. Turn conditional purification into a complete finite experiment.
+- **Dependencies and story role:** M11, M21 and M23. Turn conditional purification into a complete finite experiment.
 - **Conceptual connection:** A uniform conditional failure bound composes across runs even with the allowed classical quality dependence; no independence of hidden qualities is silently added.
-- **Source pointers:** N&C Ch. 2 supplies probability conventions; the conditional-expectation and cap proofs are supplied in [finite resources](../science/resources.md); [independent cost-distribution check](../verification/check_resources.py).
+- **Source pointers:** N&C Appendix 1, probability and expectation. [Conditional expectation and hard caps](../science/resources.md) · [Independent cost-distribution check](../verification/check_resources.py).
 
-### M25 — Accuracy has a specimen cost
+### M25 — Optimal near-pure contraction and its specimen cost
 
 - **Phase:** Narrative/innovation.
-- **Central question:** What does approaching a pure target cost in this particular recursive architecture?
-- **Understanding target:** Connect the late-stage threefold infidelity contraction, success approaching one half and sixfold mean cost per level; interpret the achieved accuracy exponent and its dependence on the initial floor.
-- **Dependencies and story role:** M18 and M23–M24. Relate the local mechanism to its global efficiency and the conservative numerical budget.
-- **Conceptual connection:** Three-copy onset coexists with a large high-fidelity resource bill; the achieved exponent establishes neither optimality nor positive asymptotic yield.
-- **Source pointers:** N&C Ch. 12 provides distillation context; [accuracy scaling and finite example](../science/resources.md); [resource interpretation](../science/interpretation.md).
+- **Central question:** What leading infidelity can a fixed-size attempt attain near a pure target, and how does that compare with the cost of recursive preparation?
+- **Understanding target:** Explain how target preservation constrains arbitrary single-error branches orthogonal to the target and gives the coefficient $`1/n`$ at fixed block size $`n`$. Identify the local achievability for $`n\ge3`$ and explain how the success probability enters the expected cost of repeating a block.
+- **Dependencies and story role:** M16, M18 and M23–M24. Connect a sharp conditional quality bound for one attempt to an achieved resource law for the full preparation procedure.
+- **Conceptual connection:** With three pairs, the threefold contraction and success approaching one half give a late-stage sixfold mean cost per level. A schedule of larger blocks bounds expected consumption by a constant times inverse final infidelity for independent identical isotropic inputs.
+- **Source pointers:** N&C Chs. 8 and 12 provide quantum operations and distillation context. [Fixed-block converse and local attainment](../science/near-pure-limit.md) · [Accuracy scaling and finite example](../science/resources.md).
 
 ### M26 — A fixed elementary-gate implementation
 
@@ -273,9 +273,9 @@ The one educational anchor is Michael A. Nielsen and Isaac L. Chuang, *Quantum C
 
 - **Phase:** Narrative/innovation.
 - **Central question:** What has the complete construction established, and which stronger conclusions remain unsupported?
-- **Understanding target:** Explain the path from chiral multiplicity filtering to same-target gain, sharp heralded specimen onset, unequal-quality floor amplification, finite-budget preparation and explicit implementation requirements; separate those results from hardware advantage and unrestricted-noise or all-LOCC optimality claims.
+- **Understanding target:** Connect chiral multiplicity filtering to same-target gain for isotropic and Pauli-axis noise, the sharp heralded specimen onset, near-pure optimality, finite-budget preparation and apparatus requirements.
 - **Dependencies and story role:** M12–M29. Integrate the narrative from local phase choice to the global scientific proposition and its boundaries.
-- **Conceptual connection:** The value is a constructive target-preserving processor with a charged finite account; known Bell-channel calibration, memory optimality and positive asymptotic yield are separate questions.
+- **Conceptual connection:** The proof of an optimal first-order infidelity coefficient applies at fixed block size. Optimal finite-noise success, minimum coherent memory and positive asymptotic yield require other comparisons.
 - **Source pointers:** N&C Chs. 8, 9 and 12 support the foundational language; [scientific reading route](../science/README.md), [interpretation](../science/interpretation.md), [related work](../references/RELATED_WORK.md) and [verification boundary](../verification/README.md) connect the full account.
 
 [Repository](../README.md) · [Scientific reading route](../science/README.md)

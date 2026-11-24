@@ -1,6 +1,6 @@
 # Quantum Blind Entanglement Purification
 
-**Can two separated laboratories purify an entangled pair without learning which maximally entangled state they share?** A fixed three-copy local protocol does so throughout the entangled isotropic noise range, preserving the same unknown physical target.
+**Can two separated laboratories purify an entangled pair without learning which maximally entangled state they share?** A fixed three-pair local filter raises a shared fidelity floor even when the input noise strengths and axes differ. It preserves the same unknown physical target.
 
 Each laboratory processes its three qubits with a fixed Schur circuit and measures a chiral multiplicity label. Opposite accepted labels leave one physical output qubit at each laboratory. The gate sequence and acceptance rule use neither the target orientation nor the actual input quality.
 
@@ -23,12 +23,13 @@ Here $`s(p)`$ is the success probability per three-pair attempt. Target fidelity
 |---|---|---|
 | How small can a blind purification block be? | Three input pairs suffice. The general two-copy impossibility is inherited from Zhao et al. | [Model and threshold](science/model.md) |
 | What supplies the gain? | Conjugate chiral filters maximize fidelity within paired rank-one Schur multiplicity filters; every real filter in that family gives zero gain. | [Chiral phase](science/chirality.md) |
-| Must all input qualities be equal? | A pointwise common visibility floor above one third is amplified for product inputs and qualifying classical mixtures. | [Exact algebra](science/algebra.md) |
+| What if strengths and error axes differ? | For independent pairs with maximally mixed marginals and the same unknown target, the filter raises any common fidelity floor above one half. | [Sharp heterogeneous floor](science/anisotropic-noise.md) |
+| How much error can a fixed block remove near purity? | For each $`n\ge3`$, local operations attain the optimal first-order infidelity factor $`1/n`$, even compared with joint operations preserving the clean target. | [Fixed-block limit](science/near-pure-limit.md) |
 | Can repeated use have a finite budget? | An explicit cap-and-restart protocol counts every failed attempt and produces one high-fidelity output at specified confidence. | [Resources](science/resources.md) |
 | Is there a concrete circuit? | An ancilla-free local three-qubit compiler emits 194 CNOTs and 227 arbitrary one-qubit gates per laboratory, before optimization. | [Implementation](science/implementation.md) |
 | How accurate must the apparatus be? | Complete-instrument error bounds control success and accepted fidelity; the required precision tightens near purity. | [Imperfect operations](science/robustness.md) |
 
-For example, input target fidelity **0.70** becomes **0.785714** on acceptance, with probability **0.224** per attempt. All three pairs are consumed whether the attempt succeeds or fails. Recursion has a substantial specimen cost: the conservative construction for output infidelity at most **0.01** and failure probability at most **0.05**, starting from the same 0.70 floor, caps consumption at **540,055 native pairs**.
+At a common input fidelity floor of **0.70**, the three-pair filter guarantees accepted fidelity at least **0.75862** for the heterogeneous source class. Three orthogonal error axes attain that floor. For identical isotropic inputs at fidelity **0.70**, the accepted fidelity is **0.785714** and the success probability is **0.224**. Each attempt consumes all three pairs. The isotropic cap-and-restart example in the [resource account](science/resources.md) uses at most **540,055 native pairs** to reach at least **0.99** fidelity with probability at least **0.95**.
 
 ## Read the science
 
@@ -50,9 +51,9 @@ The [verification guide](verification/README.md) explains exact symbolic contrac
 
 ## Scope
 
-The exact theorem assumes one common fixed unknown maximally entangled target and isotropic product-source noise. The classical-mixture extension requires a pointwise quality floor in every latent component. Local controls and stored qubits are ideal in that theorem; the separate finite-precision bounds state composable error requirements. The output preserves the unknown target and requires additional processing or information if a calibrated standard Bell pair is desired.
+The heterogeneous theorem assumes maximally mixed marginals and one common fixed target eigenvector. Classical mixtures of product sources need the floor in every component. The first-order comparison uses fixed block size, independent identical inputs with orthogonal noise, and positive clean-input success. The ideal local operations have separate [finite-precision bounds](science/robustness.md).
 
-The three-copy threshold concerns input specimens, not minimum coherent memory. The circuit and recursive cost are explicit upper bounds; optimal success, optimal three-copy fidelity, positive asymptotic yield and a hardware advantage are not established.
+The three-pair threshold counts specimens. The sharp heterogeneous fidelity is the worst case for this particular instrument. The resource account gives achievable specimen counts, and the gate count applies to the explicit three-pair circuit. A calibrated standard Bell pair can require additional information or processing.
 
 ## Purpose and contact
 
